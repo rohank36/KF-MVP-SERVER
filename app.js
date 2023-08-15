@@ -22,7 +22,7 @@ const corsOptions = {
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
 };
-app.use(cors(corsOptions));
+app.use(cors());
 
 //To Parse Cookies for authenticated user's JWTs
 app.use(cookieParser());
