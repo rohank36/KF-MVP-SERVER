@@ -43,9 +43,6 @@ exports.betaUserCheck = catchAsync(async (req, res, next) => {
   const email = req.body.email;
   const isBetaUser = await whitelistChecker.isEmailWhitelisted(email);
 
-  console.log("Whitelisted Emails:", whitelistedEmails);
-  console.log("Checking Email:", email);
-
   if (!isBetaUser) {
     return next(new AppError("KaizenFlo only open for beta users", 401));
   }
