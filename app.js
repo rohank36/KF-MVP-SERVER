@@ -29,6 +29,10 @@ app.use(express.json());
 app.use("/api/users", userRouter);
 app.use("/api/videos", videoRouter);
 
+app.get("/", (req, res) => {
+  res.send("KaizenFlo Server");
+});
+
 //For unhandled routes
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));
