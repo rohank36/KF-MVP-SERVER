@@ -6,7 +6,8 @@ const filePath = path.join(__dirname, "../whitelist.txt");
 const loadWhitelist = async (filepath) => {
   try {
     const data = await fs.readFile(filepath, "utf8");
-    const emails = data.split("\r\n").filter((email) => email.trim() !== "");
+    //const emails = data.split("\r\n").filter((email) => email.trim() !== "");
+    const emails = data.split(/\r?\n/).filter((email) => email.trim() !== "");
     return emails;
   } catch (err) {
     console.error("Error reading the whitelist", err);
