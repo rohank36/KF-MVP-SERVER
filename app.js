@@ -31,7 +31,7 @@ app.use("/api/users", userRouter);
 app.use("/api/videos", videoRouter);
 
 app.get("/", (req, res) => {
-  res.send("KaizenFlo Server");
+  res.send("KaizenFlo MVP-V1 Server");
 });
 
 app.get("/favicon.ico", (req, res) => {
