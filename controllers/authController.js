@@ -20,8 +20,10 @@ const createSendToken = (user, statusCode, res) => {
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000 //converting to miliseconds
     ),
     httpOnly: true,
-    //sameSite: "Strict",
+    sameSite: "None",
     secure: process.env.NODE_ENV === "production" ? true : false, //cookie only sent on https when NODE_ENV === prod
+    domain: "https://kf-mvp-client.vercel.app",
+    path: "/",
   };
 
   //if (process.env.NODE_ENV === "production") cookie.options.secure = true;
