@@ -17,7 +17,13 @@ const app = express();
 
 //CORS Handling
 const corsOptions = {
-  origin: "https://kf-mvp-client.vercel.app/",
+  origin: function (origin, cb) {
+    if (origin.startsWith("https://kf-mvp-client.vercel.app/")) {
+      cb(null, true);
+    } else {
+      cb(null, false);
+    }
+  },
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
