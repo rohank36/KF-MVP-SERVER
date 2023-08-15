@@ -21,8 +21,10 @@ const corsOptions = {
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
+  preflightContinue: true,
+  optionsSuccessStatus: 204,
 };
-app.use(cors());
+app.use(cors(corsOptions));
 
 //To Parse Cookies for authenticated user's JWTs
 app.use(cookieParser());
