@@ -15,6 +15,15 @@ const path = require("path");
 
 const app = express();
 
+//CORS Handling
+const corsOptions = {
+  origin: "https://kf-mvp-client.vercel.app/",
+  credentials: true,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+app.use(cors(corsOptions));
+
 //To Parse Cookies for authenticated user's JWTs
 app.use(cookieParser());
 
