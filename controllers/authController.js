@@ -22,8 +22,8 @@ const createSendToken = (user, statusCode, res) => {
     httpOnly: true,
     sameSite: "None",
     secure: process.env.NODE_ENV === "production" ? true : false, //cookie only sent on https when NODE_ENV === prod
-    domain: "kf-mvp-client.vercel.app",
-    path: "/",
+    //domain: "kf-mvp-client.vercel.app",
+    //path: "/",
   };
 
   //if (process.env.NODE_ENV === "production") cookie.options.secure = true;
