@@ -11,6 +11,7 @@ const videoRouter = require("./routes/videoRoutes");
 const AppError = require("./utils/appError");
 const globalErrorHandler = require("./controllers/errorController");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
 
@@ -31,6 +32,10 @@ app.use("/api/videos", videoRouter);
 
 app.get("/", (req, res) => {
   res.send("KaizenFlo Server");
+});
+
+app.get("/favicon.ico", (req, res) => {
+  res.sendFile(path.join(__dirname, "favicon.ico"));
 });
 
 //For unhandled routes
