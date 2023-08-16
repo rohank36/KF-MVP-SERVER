@@ -54,9 +54,9 @@ exports.sendUserVideo = catchAsync(async (req, res, next) => {
   const coachEmail = req.body.coachEmail;
   let emailSubject = `${req.body.videoTitle} from ${user.fullName}`;
   emailSubject = emailSubject.toString();
-  const link = `http://localhost:3001/coachDashboard`;
+  const link = `https://kf-mvp-client.vercel.app/coachDashboard`;
   const videoID = newVideo.id;
-  const message = `Hello!\n\n${user.fullName} has sent you this video for review.\n\nClick the link to go to the coach's dashboard, record your annotations and commentary on their video, and send it back to ${user.firstName}.\n\nPlease note that you must allow the browser to record your screen and audio. Additionally, please use Google Chrome or Microsoft Edge as your browswer.\n\nClick Here: ${link}\n\nVideo ID: ${videoID}\n\nOsss,\nKaizenFlo Team`;
+  const message = `Hello!\n\n${user.fullName} has sent you this video for review.\n\nClick the link to go to the coach's dashboard, record your annotations and commentary on their video, and send it back to ${user.firstName}.\n\nPlease note that you must allow the browser to record your screen and audio. Additionally, please use Google Chrome or Microsoft Edge as your browser.\n\nClick Here: ${link}\n\nVideo ID: ${videoID}\n\nOsss,\nKaizenFlo Team`;
 
   try {
     /*
